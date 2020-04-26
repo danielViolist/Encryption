@@ -49,3 +49,4 @@ elif mode == 'd':
 else:
     print("Please enter 'e' or 'd' to use this program.")
     exit()
+print("Goodbye.")
