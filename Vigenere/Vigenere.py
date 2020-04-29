@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+#Vigenere Cipher
 class message:
     def __init__(self, message, key):
         self.__msg = message
