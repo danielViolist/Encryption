@@ -19,14 +19,14 @@ def decode(msg):
     "H": 19, "G": 20, "F": 21, "E": 22, "D": 23, "C": 24, "B": 25, "A": 26}
     backwards = {26: "Z", 25: "Y", 24: "X", 23: "W", 22: "V", 21: "U", 20: "T", 19: "S", 18: "R", 17: "Q", 16: "P", 15: "O", 14: "N", 13: "M", 12: "L", 11: "K", 10: "J",
      9: "I", 8: "H", 7: "G", 6: "F", 5: "E", 4: "D", 3: "C", 2: "B", 1: "A"}
-    msg = msg.upper()
-    cipher = ""
-    for letter in msg:
+    cipher = msg.upper()
+    msg = ""
+    for letter in cipher:
         if letter == " ":
-            cipher += " "
+            msg += " "
             continue
         char = original.get(letter)
-        cipher += backwards.get(char)
+        msg += backwards.get(char)
     return cipher
 
 while(True):
