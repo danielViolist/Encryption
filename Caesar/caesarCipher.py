@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Ceasar Cipher Encryption and Decription
+# Caesar Cipher Encryption and Decription      
 class message:
     def __init__(self, msg="abc", key=1):
         self.__message = msg
