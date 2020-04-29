@@ -1,5 +1,3 @@
-//Made in collaboration with cSwiggitySwooty
-
 import java.util.Scanner;
 
 public class Atbash01 {
