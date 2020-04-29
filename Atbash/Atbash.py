@@ -34,11 +34,9 @@ while(True):
     if mode == 'e':
         msg = input("Enter the message to encrypt: ")
         print(encode(msg))
-        pass
     elif mode == 'd':
         msg = input("Enter the message to decode: ")
         print(decode(msg))
-        pass
     elif mode == 'q':
         break
     else:
