@@ -12,5 +12,5 @@ std::string decode(std::string aMessage)
 
 int main()
 {
-    
+    std::cout << "Please "
 }

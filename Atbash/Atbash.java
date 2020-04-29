@@ -7,7 +7,7 @@ public class Atbash {
 	public static void main(String[] args) 
 	{
 		Scanner key = new Scanner(System.in);
-		System.out.println("Do you want to encode, decode, or quit? Eneter \'E\' to encode, \'D\' to decode, or \'Q\' to quit."); 
+		System.out.println("Do you want to encode, decode, or quit? Enter \'E\' to encode, \'D\' to decode, or \'Q\' to quit."); 
 		
 		String first = key.next();
 		key.nextLine();
