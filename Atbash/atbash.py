@@ -28,7 +28,6 @@ def decode(msg):
         char = original.get(letter)
         cipher += backwards.get(char)
     return cipher
-    pass
 
 while(True):
     mode = input("Would you like to ecrypt, decrypt, or quit? Enter 'e', 'd', or 'q': ")
