@@ -18,6 +18,7 @@ class message:
         for letter in msg:
             index = (alphabet.find(letter) + (alphabet.find(self.__key[i]))) % len(alphabet)
             cipher += alphabet[index]
+            i += 1
             if i == len(self.__key):
                 i = 0
         return cipher
@@ -29,6 +30,7 @@ class message:
         for letter in msg:
             index = (alphabet.find(letter) - (alphabet.find(self.__key[i]))) % len(alphabet)
             plainText += alphabet[index]
+            i += 1
             if i == len(self.__key):
                 i = 0
         return plainText
