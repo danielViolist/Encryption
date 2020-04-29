@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Atbash01 {
+public class Atbash {
 
 	public static void main(String[] args) 
 	{
