@@ -33,7 +33,7 @@ class message:
                 i = 0
         return plainText
 
-msg = input("Message to encrypt/decrtpt: ")
+msg = input("Message to encrypt/decrypt: ")
 key = input("Cipher key word: ")
 mode = input("Encrypt or decrypt? Enter 'e' or 'd': ")
 code = message(msg, key)
