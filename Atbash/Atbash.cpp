@@ -52,23 +52,23 @@ int main()
     while(true)
     {
         std::cout << "Do you want to encode, decode, or quit? Enter \'E\' to encode, \'D\' to decode, or \'Q\' to quit." << std::endl;
-        char c;
-        std::cin >> c;
-        if(c == 'E' || c == 'e')
+        std::string c;
+        std::getline(std::cin, c);
+        if(c[0] == 'E' || c[0] == 'e')
         {
             std::cout << "Enter the message you wish to encode\n";
             std::string msg;
-            std::cin >> msg;
+            std::getline(std::cin, msg);
             std::cout << encode(msg, msg.length()) << std::endl;
         }
-        else if(c == 'D' || c == 'd')
+        else if(c[0] == 'D' || c[0] == 'd')
         {
             std::cout << "Enter the message you wish to decode\n";
             std::string msg;
-            std::cin >> msg;
+            std::getline(std::cin, msg);
             std::cout << decode(msg, msg.length()) << std::endl;
         }
-        else if(c == 'Q' || c == 'q')
+        else if(c[0] == 'Q' || c[0] == 'q')
         {
             std::cout << "Deuces homie" << std::endl;
             return 0;
