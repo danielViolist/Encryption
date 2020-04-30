@@ -31,22 +31,28 @@ class message:
             phrase += alphabet[i]
         return phrase
 
-msg = input("Message to decrypt or encrypt with the Ceasar Cipher: ")
-try:
-    key = int(input("Number of shifts for the cipher: "))
-except Exception as e:
-    print("Only integer values allowed for the key. Exiting.")
-    exit()
-mode = input("Would you like to encrypt or decrypt? Enter 'e' or 'd': ")
-if mode == 'e':
-    cipher_text = message(msg, key)
-    cipher_text = cipher_text.get_encryption()
-    print("Cipher Text: " + cipher_text)
-elif mode == 'd':
-    decoded_text = message(msg, key)
-    decoded_text = decoded_text.get_decryption()
-    print("Decoded text: " + decoded_text)
-else:
-    print("Please enter 'e' or 'd' to use this program.")
-    exit()
-print("Goodbye.")
+while(True):
+    mode = input("Would you like to encrypt, decrypt, or quit? Enter 'e', 'd', or 'q': ")
+    if mode == 'e':
+        msg = input("Enter the message to encrypt: ")
+        try: 
+            key = int(input("Enter the number of shifts for the cipher: "))
+        except Exception:
+            print("\n\nOnly inter values are accepted for the key.\n\n")
+            continue
+        cipher_txt = message(msg, key)
+        print("\n\nCipher Text: "+cipher_txt.get_encryption()+"\n\n")
+    elif mode == 'd':
+        msg = input("Enter the message to decrypt: ")
+        try:
+            key = int(input("Enter the number of shifts for cipher: "))
+        except:
+            print("\n\nOnly iteger values are accepted for the key.\n\n")
+            continue
+        plain_txt = message(msg, key)
+        print("\n\nDecrypted Text: "+plain_txt.get_decryption()+"\n\n")
+    elif mode == 'q':
+        print("\n\nGoodbye.\n\n")
+        break
+    else: 
+        continue
