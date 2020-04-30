@@ -3,7 +3,7 @@
 class message:
     def __init__(self, message, key):
         self.__msg = message
-        self.__key = key
+        self.__keyPhrase = key
         self.__encryption = self.__encrypt()
         self.__decryption = self.__decrypt()
     def get_encryption(self):
@@ -12,14 +12,14 @@ class message:
         return self.__decryption
     def __encrypt(self):
         alphabet = ' ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-        msg = self.__msg.upper()
+        mesg = self.__msg.upper()
         cipher = ""
         i = 0
-        for letter in msg:
-            index = (alphabet.find(letter) + (alphabet.find(self.__key[i]))) % len(alphabet)
+        for letter in mesg:
+            index = (alphabet.find(letter) + (alphabet.find(self.__keyPhrase[i]))) % len(alphabet)
             cipher += alphabet[index]
             i += 1
-            if i == len(self.__key):
+            if i == len(self.__keyPhrase):
                 i = 0
         return cipher
     def __decrypt(self):
@@ -28,20 +28,29 @@ class message:
         plainText = ""
         i = 0
         for letter in msg:
-            index = (alphabet.find(letter) - (alphabet.find(self.__key[i]))) % len(alphabet)
+            index = (alphabet.find(letter) - (alphabet.find(self.__keyPhrase[i]))) % len(alphabet)
             plainText += alphabet[index]
             i += 1
-            if i == len(self.__key):
+            if i == len(self.__keyPhrase):
                 i = 0
         return plainText
 
-msg = input("Message to encrypt/decrypt: ")
-key = input("Cipher key word: ")
-mode = input("Encrypt or decrypt? Enter 'e' or 'd': ")
-code = message(msg, key)
-if mode == 'e':
-    print(code.get_encryption())
-elif mode == 'd':
-    print(code.get_decryption())
-else:
-    print("Invalid entry.")
+while(True):
+    mode = input("Would you like to encrypt, decrypt, or quit? Enter 'e', 'd', or 'q': ")
+    if mode == 'e':
+        msg = input("Enter the message to encrypt: ")
+        key = input("Enter the key: ")
+        key = key.upper()
+        code = message(msg, key)
+        print("\n\nEncrypted Message: "+code.get_encryption()+"\n\n")
+    elif mode == 'd':
+        msg = input("Enter the message to decrypt: ")
+        key = input("Enter the key: ")
+        key = key.upper()
+        code = message(msg, key)
+        print("\n\nDecrypted Message: "+code.get_decryption()+"\n\n")
+    elif mode == 'q':
+        print("\nGoodbye.")
+        break
+    else:
+        continue
