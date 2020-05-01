@@ -33,7 +33,7 @@ class message:
 
 while(True):
     mode = input("Would you like to encrypt, decrypt, or quit? Enter 'e', 'd', or 'q': ")
-    if mode == 'e':
+    if mode == 'e' or mode == 'E':
         msg = input("Enter the message to encrypt: ")
         try: 
             key = int(input("Enter the number of shifts for the cipher: "))
@@ -42,7 +42,7 @@ while(True):
             continue
         cipher_txt = message(msg, key)
         print("\n\nCipher Text: "+cipher_txt.get_encryption()+"\n\n")
-    elif mode == 'd':
+    elif mode == 'd' or mode == 'D':
         msg = input("Enter the message to decrypt: ")
         try:
             key = int(input("Enter the number of shifts for cipher: "))
@@ -51,7 +51,7 @@ while(True):
             continue
         plain_txt = message(msg, key)
         print("\n\nDecrypted Text: "+plain_txt.get_decryption()+"\n\n")
-    elif mode == 'q':
+    elif mode == 'q' or mode == 'Q':
         print("\n\nGoodbye.\n\n")
         break
     else: 
