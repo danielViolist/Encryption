@@ -44,8 +44,10 @@ int main()
         }
         else if (mode == 'q' || mode == 'Q')
             break;
-        else 
-            continue;
+        else {
+           scanf("%c", &mode);
+           continue;
+        }
     }
 }
 
