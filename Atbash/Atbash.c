@@ -7,7 +7,6 @@
 void encrypt(char result[], char msg[]);
 void decrypt(char result[], char msg[]);
 void toUpperCase(char msg[]);
-int getIndex(char c, const char letters[]);
 void makeAllEmpty(char msg[]);
 int main()
 {
@@ -91,15 +90,6 @@ void toUpperCase(char msg[])
     {
         msg[i] = toupper(msg[i]);
     }
-}
-int getIndex(char c, const char letters[])
-{
-    for (int i = 0; i < strlen(letters); i++)
-    {
-        if (letters[i] == c)
-            return i;
-    }
-    return -1;
 }
 void makeAllEmpty(char msg[])
 {
