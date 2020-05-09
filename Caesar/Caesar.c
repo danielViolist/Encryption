@@ -49,6 +49,7 @@ int main()
            continue;
         }
     }
+    return 0;
 }
 
 void encrypt(char result[], char message[], int shift, const char letters[])
