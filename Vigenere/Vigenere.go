@@ -14,7 +14,7 @@ func main() {
 	var selection string
 	var password string
 	scanner := bufio.NewScanner(os.Stdin)
-	for true {
+	for {
 		fmt.Println("Would you like to encrypt, decrypt, or quit (enter 'e', 'd', or 'q')?")
 		fmt.Scanln(&selection)
 		if selection == "Q" || selection == "q" {
@@ -47,10 +47,9 @@ func getIndex(msg string) int {
 }
 
 func encrypt(msg, pw string) {
-	message := strings.ToUpper(msg)
+	message, password := prepare(msg, pw)
 	cipher := []string{}
 	pwIndex := 0
-	password := strings.ToUpper(pw)
 	passw := []rune(password)
 	for _, v := range message {
 		index := (getIndex(string(v)) + getIndex(string(passw[pwIndex]))) % len(alphabet)
@@ -65,8 +64,7 @@ func encrypt(msg, pw string) {
 }
 
 func decrypt(msg, pw string) {
-	message := strings.ToUpper(msg)
-	password := strings.ToUpper(pw)
+	message, password := prepare(msg, pw)
 	pwIndex := 0
 	cipher := []string{}
 	passw := []rune(password)
@@ -80,4 +78,8 @@ func decrypt(msg, pw string) {
 		}
 	}
 	fmt.Println("Decrypted message:", cipher)
+}
+
+func prepare(msg, pw string) (string, string) {
+	return strings.ToUpper(msg), strings.ToUpper(pw)
 }
